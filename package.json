@@ -12,7 +12,67 @@
     "typescript",
     "unocss"
   ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/nexa-ui.umd.cjs",
+  "module": "./dist/nexa-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/nexa-ui.js",
+      "require": "./dist/nexa-ui.umd.cjs"
+    },
+    "./style.css": "./dist/nexa-ui.css",
+    "./dist/nexa-ui.css": "./dist/nexa-ui.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "build:lib": "vite build --mode lib && node scripts/fix-table-dts.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json",
+    "format": "prettier --write \"src/**/*.{ts,vue,css,md}\"",
+    "docs:dev": "vitepress dev docs --host 0.0.0.0 --port 3001",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --host 0.0.0.0 --port 3001"
+  },
   "peerDependencies": {
     "vue": "~3.4.0"
+  },
+  "dependencies": {
+    "@vueuse/motion": "^2.2.3"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.36",
+    "@iconify-json/mdi": "^1.1.67",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^20.12.7",
+    "@unocss/preset-attributify": "^0.59.4",
+    "@unocss/preset-icons": "^0.59.4",
+    "@unocss/preset-uno": "^0.59.4",
+    "@unocss/reset": "^0.59.4",
+    "@unocss/transformer-directives": "^0.59.4",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitest/coverage-v8": "^1.5.0",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^14.7.1",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3",
+    "unocss": "^0.59.4",
+    "vite": "^5.2.10",
+    "vite-plugin-dts": "^3.9.0",
+    "vitepress": "^1.1.4",
+    "vitest": "^1.5.0",
+    "vue": "~3.4.0",
+    "vue-tsc": "^2.0.13"
   }
 }

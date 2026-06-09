@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-app
+docs/.vitepress/dist
+docs/.vitepress/cache
+*.log
+package-lock.json
