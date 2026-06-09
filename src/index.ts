@@ -31,6 +31,7 @@ export {
 export * from "./types";
 
 // Styles
+import "uno.css";
 import "./styles/index.css";
 
 // Plugin
