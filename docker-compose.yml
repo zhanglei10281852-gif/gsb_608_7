@@ -1,0 +1,22 @@
+services:
+  preview:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: preview
+    image: nexa-ui-preview
+    container_name: nexa-ui-preview
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: docs
+    image: nexa-ui-docs
+    container_name: nexa-ui-docs
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
