@@ -1,54 +1,58 @@
 import { defineConfig } from "vitepress";
+import UnoCSS from "unocss/vite";
 
 export default defineConfig({
   title: "Nexa UI",
-  description: "现代化 Vue 3 组件库",
+  description: "Modern Vue 3 Component Library",
   lang: "zh-CN",
+  vite: {
+    plugins: [UnoCSS()],
+  },
   themeConfig: {
     nav: [
-      { text: "指南", link: "/guide/getting-started" },
-      { text: "组件", link: "/components/button" },
+      { text: "Guide", link: "/guide/getting-started" },
+      { text: "Components", link: "/components/button" },
     ],
     sidebar: {
       "/guide/": [
         {
-          text: "介绍",
+          text: "Introduction",
           items: [
-            { text: "快速开始", link: "/guide/getting-started" },
-            { text: "设计系统", link: "/guide/design-system" },
+            { text: "Getting Started", link: "/guide/getting-started" },
+            { text: "Design System", link: "/guide/design-system" },
           ],
         },
       ],
       "/components/": [
         {
-          text: "基础组件",
+          text: "Basic Components",
           items: [
-            { text: "Button 按钮", link: "/components/button" },
-            { text: "Input 输入框", link: "/components/input" },
-            { text: "Card 卡片", link: "/components/card" },
-            { text: "Avatar 头像", link: "/components/avatar" },
+            { text: "Button", link: "/components/button" },
+            { text: "Input", link: "/components/input" },
+            { text: "Card", link: "/components/card" },
+            { text: "Avatar", link: "/components/avatar" },
           ],
         },
         {
-          text: "导航组件",
+          text: "Navigation",
           items: [
-            { text: "Tabs 标签页", link: "/components/tabs" },
-            { text: "Breadcrumb 面包屑", link: "/components/breadcrumb" },
+            { text: "Tabs", link: "/components/tabs" },
+            { text: "Breadcrumb", link: "/components/breadcrumb" },
           ],
         },
         {
-          text: "反馈组件",
+          text: "Feedback",
           items: [
-            { text: "Toast 轻提示", link: "/components/toast" },
-            { text: "Modal 模态框", link: "/components/modal" },
-            { text: "Skeleton 骨架屏", link: "/components/skeleton" },
+            { text: "Toast", link: "/components/toast" },
+            { text: "Modal", link: "/components/modal" },
+            { text: "Skeleton", link: "/components/skeleton" },
           ],
         },
         {
-          text: "数据展示",
+          text: "Data Display",
           items: [
-            { text: "Table 表格", link: "/components/table" },
-            { text: "Badge 徽标", link: "/components/badge" },
+            { text: "Table", link: "/components/table" },
+            { text: "Badge", link: "/components/badge" },
           ],
         },
       ],
@@ -57,8 +61,8 @@ export default defineConfig({
       { icon: "github", link: "https://github.com/your-org/nexa-ui" },
     ],
     footer: {
-      message: "基于 MIT 许可发布",
-      copyright: "© 2026 Nexa UI",
+      message: "Released under the MIT License.",
+      copyright: "Copyright 2026 Nexa UI",
     },
   },
 });
