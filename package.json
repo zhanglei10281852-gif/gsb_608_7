@@ -12,7 +12,59 @@
     "typescript",
     "unocss"
   ],
+  "main": "./dist/nexa-ui.umd.cjs",
+  "module": "./dist/nexa-ui.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/nexa-ui.js",
+      "require": "./dist/nexa-ui.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit",
+    "docs:dev": "vitepress dev docs --port 3001",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs --port 3001"
+  },
   "peerDependencies": {
-    "vue": "~3.4.0"
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@vueuse/motion": "^2.2.6"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.2.8",
+    "@iconify-json/mdi": "^1.2.3",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^22.10.2",
+    "@unocss/preset-icons": "^0.65.4",
+    "@unocss/preset-uno": "^0.65.4",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vitest/coverage-v8": "^2.1.8",
+    "@vue/test-utils": "^2.4.6",
+    "happy-dom": "^15.11.7",
+    "typescript": "~5.3.3",
+    "unocss": "^0.65.4",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.4.0",
+    "vitepress": "^1.5.0",
+    "vitest": "^2.1.8",
+    "vue": "^3.4.38",
+    "vue-tsc": "^2.1.10"
   }
 }

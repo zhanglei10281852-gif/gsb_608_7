@@ -1,0 +1,24 @@
+services:
+  preview:
+    build:
+      context: .
+      target: preview
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+
+  docs:
+    build:
+      context: .
+      target: docs
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
