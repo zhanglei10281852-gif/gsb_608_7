@@ -1,9 +1,19 @@
 import { defineConfig } from "vitepress";
+import UnoCSS from "unocss/vite";
+import { resolve } from "path";
 
 export default defineConfig({
   title: "Nexa UI",
   description: "现代化 Vue 3 组件库",
   lang: "zh-CN",
+  vite: {
+    plugins: [UnoCSS()],
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "../../src"),
+      },
+    },
+  },
   themeConfig: {
     nav: [
       { text: "指南", link: "/guide/getting-started" },
